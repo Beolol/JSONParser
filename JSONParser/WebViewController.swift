@@ -26,13 +26,6 @@ class WebViewController: UIViewController {
         super.viewDidLoad()
         self.title = titleStory
 
-        if let url = NSURL(string: http) {
-            let request = NSURLRequest(URL: url as URL)
-            webView.loadRequest(request)
-        } else {
-            //if URL does not work for some reason, do something here like show error loading view or something
-        }
-
         
         // Do any additional setup after loading the view.
     }
