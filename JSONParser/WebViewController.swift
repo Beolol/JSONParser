@@ -19,9 +19,6 @@ class WebViewController: UIViewController {
     var http: String = ""
     
     
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = titleStory
@@ -38,11 +35,7 @@ class WebViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         print(http)
-//        Alamofire.request(http)
-//        let url = URL(string: "www.google.com")
-//        print(srtHttp)
-//        let myURLRequest:URLRequest = URLRequest(url: url!)
-//        self.webView.loadRequest(Alamofire.URLRequest(url: url!))
+        self.webView.loadRequest(URLRequest(url: URL(string: http)!))
     }
 
     /*

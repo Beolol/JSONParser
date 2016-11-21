@@ -14,10 +14,10 @@ import SwiftyJSON
 class TableViewController: UITableViewController {
     
 
-    var rate_title_list: [String] = []
-    var rate_text_list: [String] = []
-    var rate_html_list: [String] = []
-    var rate_date_list: [String] = []
+    var title_list: [String] = []
+    var text_list: [String] = []
+    var html_list: [String] = []
+    var date_list: [String] = []
 
     
     override func viewDidLoad() {
@@ -33,10 +33,10 @@ class TableViewController: UITableViewController {
                     {
                         let data = String(describing: key1)
                         switch value1 {
-                        case "title" : self.rate_title_list.append(data)
-                        case "link" : self.rate_html_list.append(data)
-                        case "description" : self.rate_text_list.append(data)
-                        case "pubDate" : self.rate_date_list.append(data)
+                        case "title" : self.title_list.append(data)
+                        case "link" : self.html_list.append(data)
+                        case "description" : self.text_list.append(data)
+                        case "pubDate" : self.date_list.append(data)
                         default : print()
                         }
                     }
@@ -48,14 +48,10 @@ class TableViewController: UITableViewController {
                 print(error)
             }
             
-//            self.tableView.rowHeight = UITableViewAutomaticDimension
+
         }        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -70,16 +66,16 @@ class TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return rate_title_list.count
+        return title_list.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell") as! StoriesTableViewCell
         
-        cell.titleLabel?.text = rate_title_list[indexPath.row]
-        cell.htmlLabel?.text = rate_html_list[indexPath.row]
-        cell.storyLabel?.text = rate_text_list[indexPath.row]
-        cell.dateLabel?.text = rate_date_list[indexPath.row]
+        cell.titleLabel?.text = title_list[indexPath.row]
+        cell.htmlLabel?.text = html_list[indexPath.row]
+        cell.storyLabel?.text = text_list[indexPath.row]
+        cell.dateLabel?.text = date_list[indexPath.row]
         
 
         return cell
@@ -89,11 +85,13 @@ class TableViewController: UITableViewController {
         if segue.identifier == "detail" {
             if let IndexPath = self.tableView.indexPathForSelectedRow {
                 let webPage: WebViewController = segue.destination as! WebViewController
-                webPage.titleStory = rate_title_list[IndexPath.row]
-                webPage.http = rate_html_list[IndexPath.row]
+                webPage.titleStory = title_list[IndexPath.row]
+                webPage.http = html_list[IndexPath.row]
             }
         }
     }
+    
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
