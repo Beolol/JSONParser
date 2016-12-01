@@ -49,9 +49,8 @@ class TableViewController: UITableViewController {
                         case "description" : self.text_list.append(data)
                         case "pubDate" : self.date_list.append(data)
                         default : print()
-                        }
                     }
-                    
+                }
                 }
                 print("JSON: \(json)")
                 self.tableView.reloadData()

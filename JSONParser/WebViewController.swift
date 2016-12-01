@@ -22,8 +22,13 @@ class WebViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = titleStory
-
-        
+        DispatchQueue.global(qos: .background).async {
+            
+            let urlReq = URLRequest(url: URL(string: self.http)!)
+            DispatchQueue.main.async {
+                self.webView.loadRequest(urlReq)
+            }
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -34,8 +39,7 @@ class WebViewController: UIViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
-        print(http)
-        self.webView.loadRequest(URLRequest(url: URL(string: http)!))
+        
     }
 
     /*
