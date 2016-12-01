@@ -23,6 +23,17 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Истории";
+        DispatchQueue.global(qos: .background).async {
+
+            self.loadTableInfo()
+            /*DispatchQueue.main.async {
+
+            }*/
+        }
+       // Uncomment the following line to preserve selection between presentations
+    }
+    
+    func loadTableInfo() {
         let url = "https://dl.dropboxusercontent.com/s/vtah37wynalczbs/stories.json?dl=0"
         Alamofire.request(url).validate().responseJSON { response in
             switch response.result {
@@ -47,9 +58,7 @@ class TableViewController: UITableViewController {
             case .failure(let error):
                 print(error)
             }
-            
-
-        }        // Uncomment the following line to preserve selection between presentations
+        }
     }
     
     override func didReceiveMemoryWarning() {

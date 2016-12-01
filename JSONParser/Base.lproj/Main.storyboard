@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="191"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="62w-tv-bcd" id="moO-Au-KHE">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="190.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="190"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="lblDate" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XBc-wW-ccy">
@@ -107,7 +107,7 @@
         <scene sceneID="8xy-Cq-CqP">
             <objects>
                 <navigationController id="lIs-Pv-1pC" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BLR-Ax-vrI">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="BLR-Ax-vrI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
